@@ -1,0 +1,15 @@
+{
+    "Lua.diagnostics.globals": [
+        "SMODS",
+        "localize",
+        "Event",
+        "play_sound",
+        "delay",
+        "G",
+        "mix_colours",
+        "pseudorandom_element",
+        "HEX",
+        "Card"
+    ],
+    "Lua.workspace.library": ["path/to/smods", "path/to/lovely/dump"]
+}

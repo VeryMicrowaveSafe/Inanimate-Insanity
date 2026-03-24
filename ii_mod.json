@@ -1,0 +1,11 @@
+{
+	"id": "inanimate_insanity_mod",
+	"name": "Inanimate Insanity",
+	"author": ["SpinningMicrowave"],
+	"description": "WIP",
+	"prefix": "inin",
+	"main_file": "main.lua",
+	"badge_colour": "2F71D4",
+	"display_name": "II",
+	"version": "1.0.0"
+}
