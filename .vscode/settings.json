@@ -9,7 +9,8 @@
         "mix_colours",
         "pseudorandom_element",
         "HEX",
-        "Card"
+        "Card",
+        "pseudorandom"
     ],
     "Lua.workspace.library": ["path/to/smods", "path/to/lovely/dump"]
 }

@@ -1,3 +1,4 @@
+-- Main Joker additions
 SMODS.ObjectType({
     key = "inin_joker_additions",
     default = "j_inin_box",
