@@ -153,6 +153,16 @@ return {
                 },
             },
 
+            -- MAGNET
+            j_inin_magnet = {
+                name = 'Magnet',
+                text = {
+                    "Played {C:attention}Steel{} cards",
+                    "give {X:red,C:white}X#1#{} Mult",
+                    "when scored"
+                },
+            },
+
             -- OJ
             j_inin_oj = {
                 name = 'OJ',

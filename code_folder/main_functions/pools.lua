@@ -10,6 +10,7 @@ SMODS.ObjectType({
         j_inin_box = true,
         j_inin_cabby = true,
         j_inin_jack = true,
+        j_inin_magnet = true,
         j_inin_oj = true,
         j_inin_starfruit = true,
         j_inin_taco = true,
