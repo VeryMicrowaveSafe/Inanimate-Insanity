@@ -1,5 +1,7 @@
+---JOKER QUIPS---
+-----------------
+---JOKER QUIPS---
 
--- Play Joker quips!
 local card_add_to_deck_ref = Card.add_to_deck
 
 function Card:add_to_deck(from_debuff)
@@ -16,6 +18,14 @@ function Card:add_to_deck(from_debuff)
 
         -- Check for number of sounds for this Joker
         for i = 1, 100 do
+
+            -- Failsafe
+            if i == 99 then
+                char_amount = 0
+                break
+            end
+
+            -- Check for the key
             if not SMODS.Sounds["inin_quip_" .. char_name .. i] then
                 break
             else
@@ -23,9 +33,11 @@ function Card:add_to_deck(from_debuff)
             end
         end
 
-        -- Establish sound and play sound
-        local sound_key = "inin_quip_" .. char_name .. pseudorandom("inin_" .. char_name, 1, char_amount)
-        play_sound(sound_key)
+        -- Establish that sound is present and play sound if there is
+        if char_amount ~= 0 then
+            local sound_key = "inin_quip_" .. char_name .. pseudorandom("inin_" .. char_name, 1, char_amount)
+            play_sound(sound_key, 1, 2)
+        end
     end
 
     -- End
