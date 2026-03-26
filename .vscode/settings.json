@@ -12,5 +12,9 @@
         "Card",
         "pseudorandom"
     ],
-    "Lua.workspace.library": ["path/to/smods", "path/to/lovely/dump"]
+    "Lua.workspace.library": [
+        "path/to/smods",
+        "path/to/lovely/dump"
+    ],
+    "Lua.completion.autoRequire": false
 }

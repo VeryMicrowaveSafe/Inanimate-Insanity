@@ -3,6 +3,7 @@
 ---JOKER QUIPS---
 
 local card_add_to_deck_ref = Card.add_to_deck
+local config = SMODS.current_mod.config
 
 function Card:add_to_deck(from_debuff)
 
@@ -36,7 +37,7 @@ function Card:add_to_deck(from_debuff)
         -- Establish that sound is present and play sound if there is
         if char_amount ~= 0 then
             local sound_key = "inin_quip_" .. char_name .. pseudorandom("inin_" .. char_name, 1, char_amount)
-            play_sound(sound_key, 1, 2.5)
+            play_sound(sound_key, 1, config.quip_volume/10)
         end
     end
 

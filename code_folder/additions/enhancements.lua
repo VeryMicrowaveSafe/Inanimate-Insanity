@@ -23,7 +23,7 @@ SMODS.Enhancement {
 
     calculate = function(self, card, context)
         if context.setting_ability then
-            --card.ability.extra.inin_pre_suit = card.base.suit
+            --card.ability.extra.inin_pre_suit = card.base.suit (unused, meant to store the card's old suit so that if it becomes non-painted i can give it back, not important rn)
             SMODS.change_base(card, 'inin_Painted_Suit')
         end
     end
