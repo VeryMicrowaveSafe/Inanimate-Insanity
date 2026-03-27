@@ -10,7 +10,8 @@
         "pseudorandom_element",
         "HEX",
         "Card",
-        "pseudorandom"
+        "pseudorandom",
+        "create_slider"
     ],
     "Lua.workspace.library": [
         "path/to/smods",

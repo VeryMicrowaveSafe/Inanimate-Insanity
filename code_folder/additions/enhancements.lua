@@ -16,16 +16,14 @@ SMODS.Enhancement {
     atlas = 'enhance_painted',
     replace_base_card = true,
     no_rank = true,
-    config = { card_limit = 1 },
+    config = { card_limit = 1 , pre_suit = nil },
     loc_vars = function(self, info_queue, card)
         return { vars = { card.ability.card_limit } }
     end,
 
-    calculate = function(self, card, context)
-        if context.setting_ability then
-            --card.ability.extra.inin_pre_suit = card.base.suit (unused, meant to store the card's old suit so that if it becomes non-painted i can give it back, not important rn)
-            SMODS.change_base(card, 'inin_Painted_Suit')
-        end
+    set_ability = function(self, card, initial, delay_sprites)
+        card.ability.pre_suit = card.base.suit
+        SMODS.change_base(card, 'inin_Painted_Suit')
     end
 }
 

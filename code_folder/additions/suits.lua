@@ -1,12 +1,11 @@
 SMODS.Suit {
     key = 'Painted_Suit',
     card_key = 'P',
-    pos = { y = 3 },
     lc_colour = G.C.BLACK,
     hc_colour = G.C.BLACK,
-    ui_pos = { x = 3, y = 1 },
-    config = { extra = { pre_suit2 = nil } },
-    keep_base_colours = true,
+    pos = { y = 0 },
+    ui_pos = { x = 0, y = 1 },
+    keep_base_colours = false,
 
     -- None at start
     in_pool = function(self, args)

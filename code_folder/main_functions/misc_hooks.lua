@@ -44,3 +44,31 @@ function Card:add_to_deck(from_debuff)
     -- End
     return ret
 end
+
+
+
+
+
+
+
+
+
+---PAINTED RESET---
+-------------------
+---PAINTED RESET---
+
+local card_set_ability_ref = Card.set_ability
+
+function Card:set_ability(initial, delay_sprites)
+
+    -- Swap to proper suit
+    if self.ability and self.ability.pre_suit and initial.key ~= "m_inin_painted" then
+        SMODS.change_base(self, self.ability.pre_suit)
+    end
+
+    -- Trigger original function
+    local ret = card_set_ability_ref(self, initial, delay_sprites)
+
+    -- End
+    return ret
+end

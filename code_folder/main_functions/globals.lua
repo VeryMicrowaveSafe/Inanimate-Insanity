@@ -1,8 +1,8 @@
 G.C.ININ = {
     SET = {
-        Challenge = HEX("0000FF"),
+        Challenge = HEX("C75858"),
     },
     SECONDARY_SET = {
-        Challenge = HEX("0000FF")
+        Challenge = HEX("C75858")
     }
 }
