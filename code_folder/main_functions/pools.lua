@@ -14,5 +14,6 @@ SMODS.ObjectType({
         j_inin_oj = true,
         j_inin_starfruit = true,
         j_inin_taco = true,
+        j_inin_test_tube = true,
     },
 })

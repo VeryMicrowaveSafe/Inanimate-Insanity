@@ -79,7 +79,7 @@ SMODS.Joker {
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
-    config = { extra = { increment = 2 , mult = 0 , size = 1 } },
+    config = { extra = { increment = 1 , mult = 0 , size = 1 } },
 
     -- Return for localization
     loc_vars = function(self, info_queue, card)
@@ -95,8 +95,8 @@ SMODS.Joker {
             if context.before and #context.full_hand == card.ability.extra.size then
                 card.ability.extra.mult = card.ability.extra.mult + card.ability.extra.increment
                 return {
-                    message = "Upgrade!",
-                    colour = G.C.FILTER
+                    message = localize('k_upgrade_ex'),
+                    colour = G.C.RED
                 }
             end
 
@@ -105,7 +105,7 @@ SMODS.Joker {
                 card.ability.extra.size = pseudorandom("inin_test_tube", 1, 5)
                 return {
                     message = localize('k_reset'),
-                    colour = G.C.FILTER
+                    colour = G.C.RED
                 }
             end
         end
