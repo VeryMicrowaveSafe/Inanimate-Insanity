@@ -16,25 +16,19 @@ SMODS.Enhancement {
     atlas = 'enhance_painted',
     replace_base_card = true,
     no_rank = true,
-    config = { card_limit = 1 , pre_suit = nil },
+    config = { card_limit = 1 , inin_pre_suit = nil },
 
-    -- 
-    loc_vars = function(self, info_queue, card)
-        return { vars = { card.ability.card_limit } }
-    end,
-
-    -- When the card is set to be Painted
-    set_ability = function(self, card, initial, delay_sprites)
-
-        -- Make sure the card isn't already Painted and has a suit to assign
-        if card.base and card.base.suit ~= 'inin_Painted_Suit' then
-            card.ability.pre_suit = card.base.suit
-        elseif not card.base then
-            local suits = { "Spades" , "Clubs" , "Hearts" , "Diamonds" }
-            card.ability.pre_suit = suits[pseudorandom_element("m_inin_painted", 1, 4)]
+    -- Set card to Painted
+    update = function(self, card, dt)
+        if G.hand or G.play and SMODS.has_enhancement(card, 'm_inin_painted') then
+            -- Set pre_suit
+            if not card.ability.inin_pre_suit then card.ability.inin_pre_suit = card.base.suit end
+            
+            -- Set to Painted suit
+            local new_suit = 'inin_Painted_Suit'
+            SMODS.change_base(card, new_suit)
         end
-        SMODS.change_base(card, 'inin_Painted_Suit')
-    end
+    end,
 }
 
 
