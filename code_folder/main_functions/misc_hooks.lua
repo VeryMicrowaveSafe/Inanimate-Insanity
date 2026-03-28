@@ -64,6 +64,7 @@ function Card:set_ability(initial, delay_sprites)
     -- Swap to proper suit
     if self.ability and self.ability.pre_suit and initial.key ~= "m_inin_painted" then
         SMODS.change_base(self, self.ability.pre_suit)
+        self.ability.pre_suit = nil
     end
 
     -- Trigger original function

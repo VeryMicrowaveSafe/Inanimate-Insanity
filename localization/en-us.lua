@@ -194,6 +194,19 @@ return {
                     "{C:chips}+#2#{} chips"
                 },
             },
+
+            -- TEST TUBE
+            j_inin_test_tube = {
+                name = 'Test Tube',
+                text = {
+                    "This Joker gains {C:mult}+#1#{} Mult",
+                    "if played hand has",
+                    "exactly {C:attention}#3#{} card#4#",
+                    "{C:inactive}Card amount changes{}",
+                    "{C:inactive}at end of round{}",
+                    "{C:inactive}(Currently {}{C:mult}+#2#{}{C:inactive} Mult){}"
+                },
+            },
         },
         
         
