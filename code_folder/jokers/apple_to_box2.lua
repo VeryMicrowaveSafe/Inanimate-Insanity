@@ -261,7 +261,7 @@ SMODS.Joker {
     cost = 5,
     blueprint_compat = true,
     eternal_compat = true,
-    perishable_compat = true,
+    perishable_compat = false,
     config = { extra = { chips = 0, ghost_odds = 4 } },
 
     -- Update Variables

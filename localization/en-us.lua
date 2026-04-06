@@ -141,6 +141,18 @@ return {
                 },
             },
 
+            -- GOO
+            j_inin_goo = {
+                name = 'Goo',
+                text = {
+                    "Earn {C:money}$#1#{} at end of round",
+                    "for each time your total score",
+                    "reached the {C:attention}required chips{}",
+                    "for the round",
+                    "{C:inactive}({}{C:money}$#2#{}{C:inactive} max){}"
+                },
+            },
+
             -- JACK
             j_inin_jack = {
                 name = 'Jack',
@@ -169,6 +181,16 @@ return {
                 text = {
                     "Balance {C:chips}Chips{} and {C:mult}Mult{}",
                     "before scoring"
+                },
+            },
+
+            -- SILVER SPOON
+            j_inin_silver_spoon = {
+                name = 'Silver Spoon',
+                text = {
+                    "{X:red,C:white}X#1#{} Mult for",
+                    "every {C:money}$#2#{} you have",
+                    "{C:inactive}(Currently {}{X:red,C:white}X#3#{}{C:inactive} Mult){}"
                 },
             },
 
@@ -236,7 +258,8 @@ return {
             m_inin_cardboard = {
                 name = 'Cardboard Card',
                 text = {
-                    "???"
+                    "No suit, counts",
+                    "as a unique {C:attention}rank{}"
                 },
             },
 
@@ -244,11 +267,7 @@ return {
             m_inin_snotty = {
                 name = 'Snotty Card',
                 text = {
-                    "Copies ability of",
-                    "a random {C:enhanced}Enhancement{}",
-                    "Chosen {C:enhanced}Enhancement{} changes",
-                    "at end of round",
-                    "{C:inactive}Currently copying: #1#{}"
+                    "idk lol"
                 },
             },
 
@@ -256,11 +275,11 @@ return {
             m_inin_butterfly = {
                 name = 'Butterfly Card',
                 text = {
-                    "Copies ability of",
-                    "a random {C:enhanced}Enhancement{}",
-                    "Chosen {C:enhanced}Enhancement{} changes",
-                    "at end of round",
-                    "{C:inactive}Currently copying: #1#{}"
+                    "Copies {C:attention}ability{} of a",
+                    "random {C:enhanced}Enhancement{}",
+                    "that changes at",
+                    "end of round",
+                    "{C:inactive}Currently copying #1#{}"
                 },
             }
         },

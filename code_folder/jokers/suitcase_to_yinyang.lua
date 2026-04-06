@@ -26,7 +26,7 @@ SMODS.Joker {
     -- Vars
     loc_vars = function(self, info_queue, card)
         local numerator, denominator = SMODS.get_probability_vars(card, 1, card.ability.extra.odds, 'inin_taco')
-        return { vars = { card.ability.extra.Xmult, card.ability.extra.chips, numerator, denominator }}
+        return { vars = { card.ability.extra.Xmult, card.ability.extra.chips, numerator, denominator } }
     end,
 
     -- Calculations
@@ -78,8 +78,8 @@ SMODS.Joker {
     cost = 4,
     blueprint_compat = true,
     eternal_compat = true,
-    perishable_compat = true,
-    config = { extra = { increment = 1 , mult = 0 , size = 1 } },
+    perishable_compat = false,
+    config = { extra = { increment = 2 , mult = 0 , size = 1 } },
 
     -- Return for localization
     loc_vars = function(self, info_queue, card)

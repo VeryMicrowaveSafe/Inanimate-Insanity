@@ -204,6 +204,61 @@ SMODS.Joker {
 
 
 
+--GOO--
+-------
+--GOO--
+
+SMODS.Atlas {
+    key = 'goo',
+    path = 'j_goo.png',
+    px = 71,
+    py = 95
+}
+
+SMODS.Joker {
+	
+    -- General Info
+    key = 'goo',
+    atlas = 'goo',
+	unlocked = true,
+    discovered = true,
+    rarity = 1,
+    cost = 4,
+    blueprint_compat = false,
+    eternal_compat = true,
+    perishable_compat = true,
+    config = { extra = { dollars = 2, multiplier = 1, max = 14 } },
+
+    -- Update Localization
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.extra.dollars, card.ability.extra.max } }
+    end,
+
+    -- Money pay
+    calc_dollar_bonus = function(self, card)
+        return card.ability.extra.dollars * card.ability.extra.multiplier
+    end,
+
+    -- Calculations
+    calculate = function(self, card, context)
+
+        if context.end_of_round and context.main_eval and not context.blueprint then
+            card.ability.extra.multiplier = math.min(math.floor(G.GAME.chips / G.GAME.blind.chips), card.ability.extra.max / card.ability.extra.dollars)
+        end
+
+    end,
+
+}
+
+
+
+
+
+
+
+
+
+
 --JACK--
 --------
 --JACK--
@@ -226,7 +281,7 @@ SMODS.Joker {
     cost = 5,
     blueprint_compat = true,
     eternal_compat = true,
-    perishable_compat = true,
+    perishable_compat = false,
     config = { extra = { mult = 0, increment = 3 } },
 
     -- Update Localization

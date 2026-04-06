@@ -1,3 +1,54 @@
+--TACO--
+--------
+--TACO--
+
+SMODS.Atlas {
+    key = 'silver_spoon',
+    path = 'j_silver_spoon.png',
+    px = 71,
+    py = 95
+}
+
+SMODS.Joker {
+	
+    -- General Info
+    key = 'silver_spoon',
+    atlas = 'silver_spoon',
+	unlocked = true,
+    discovered = true,
+    rarity = 3,
+    cost = 8,
+    blueprint_compat = true,
+    eternal_compat = true,
+    perishable_compat = true,
+    config = { extra = { increment = 0.25, scale = 10 } },
+
+    -- Vars
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.extra.increment, card.ability.extra.scale, 1 + (card.ability.extra.increment * math.floor(G.GAME.dollars / card.ability.extra.scale)) } }
+    end,
+
+    -- Calculations
+    calculate = function(self, card, context)
+        
+        -- X-Mult!
+        if context.joker_main then
+            return {
+                xmult = 1 + (card.ability.extra.increment * math.floor(G.GAME.dollars / card.ability.extra.scale))
+            }
+        end
+    end
+}
+
+
+
+
+
+
+
+
+
+
 --STARFRUIT--
 -------------
 --STARFRUIT--
