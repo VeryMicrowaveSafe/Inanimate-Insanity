@@ -23,5 +23,5 @@ end
 assert(SMODS.load_file('code_folder/additions/challenge_cards.lua'))()
 assert(SMODS.load_file('code_folder/additions/editions.lua'))()
 assert(SMODS.load_file('code_folder/additions/enhancements.lua'))()
-assert(SMODS.load_file('code_folder/additions/suits.lua'))()
+assert(SMODS.load_file('code_folder/additions/suitrank.lua'))()
 assert(SMODS.load_file('code_folder/additions/sounds.lua'))()

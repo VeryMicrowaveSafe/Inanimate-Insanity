@@ -360,6 +360,13 @@ return {
 
 
 
+        -- RANKS
+        ranks = {
+            inin_Cardboard_Rank = "Board"
+        },
+
+
+
         -- SUITS
         suits_plural = {
             -- PAINTED

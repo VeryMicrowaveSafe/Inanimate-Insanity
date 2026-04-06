@@ -63,10 +63,10 @@ SMODS.Enhancement {
     -- Set card to Cardboard
     update = function(self, card, dt)
         if G.hand or G.play and SMODS.has_enhancement(card, 'm_inin_cardboard') then
-            -- Set pre_suit
+            -- Set pre_rank
             if not card.ability.inin_pre_rank then card.ability.inin_pre_rank = card.base.rank end
             
-            -- Set to Painted suit
+            -- Set to Cardboard Rank
             local new_rank = 'inin_Cardboard_Rank'
             SMODS.change_base(card, new_rank)
         end

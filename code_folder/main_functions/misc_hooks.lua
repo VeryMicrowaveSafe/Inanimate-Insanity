@@ -53,9 +53,9 @@ end
 
 
 
----PAINTED RESET---
--------------------
----PAINTED RESET---
+---PAINTED/CARDBOARD RESET---
+-----------------------------
+---PAINTED/CARDBOARD RESET---
 
 local card_set_ability_ref = Card.set_ability
 
@@ -65,6 +65,12 @@ function Card:set_ability(initial, delay_sprites)
     if self.ability and self.ability.inin_pre_suit and initial.key ~= "m_inin_painted" then
         SMODS.change_base(self, self.ability.inin_pre_suit)
         self.ability.inin_pre_suit = nil
+    end
+
+    -- Swap to proper rank
+    if self.ability and self.ability.inin_pre_rank and initial.key ~= "m_inin_cardboard" then
+        SMODS.change_base(self, self.ability.inin_pre_rank)
+        self.ability.inin_pre_rank = nil
     end
 
     -- Trigger original function
