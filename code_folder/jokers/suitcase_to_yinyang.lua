@@ -21,7 +21,7 @@ SMODS.Joker {
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
-    config = { extra = { Xmult = 5, chips = 50, odds = 2 } },
+    config = { extra = { Xmult = 5 , chips = 50 , odds = 2 } },
 
     -- Vars
     loc_vars = function(self, info_queue, card)
@@ -44,6 +44,75 @@ SMODS.Joker {
                 }
             end
         end
+    end
+}
+
+
+
+
+
+
+
+
+
+
+--TEA KETTLE--
+--------------
+--TEA KETTLE--
+
+SMODS.Atlas {
+    key = 'tea_kettle',
+    path = 'j_tea_kettle.png',
+    px = 71,
+    py = 95
+}
+
+SMODS.Joker {
+	
+    -- General Info
+    key = 'tea_kettle',
+    atlas = 'tea_kettle',
+	unlocked = true,
+    discovered = true,
+    rarity = 1,
+    cost = 4,
+    blueprint_compat = true,
+    eternal_compat = true,
+    perishable_compat = false,
+    config = { extra = { increment = 6 , chips = 0 } },
+
+    -- Return for localization
+    loc_vars = function(self, info_queue, card)
+        return { vars = { card.ability.extra.increment , card.ability.extra.chips } }
+    end,
+
+    -- Calculations
+    calculate = function(self, card, context)
+        
+        -- Edit Chips
+        if not context.blueprint then
+            if context.before and #context.full_hand % 2 == 1 and card.ability.extra.chips > 0 then
+                card.ability.extra.chips = card.ability.extra.chips - card.ability.extra.increment
+                return {
+                    message = "-" .. card.ability.extra.increment .. " Chips",
+                    colour = G.C.CHIPS
+                }
+            elseif context.before and #context.full_hand % 2 ~= 1 then
+                card.ability.extra.chips = card.ability.extra.chips + card.ability.extra.increment
+                return {
+                    message = "Upgrade!",
+                    colour = G.C.FILTER
+                }
+            end
+        end
+
+        -- Return mult
+        if context.joker_main then
+            return {
+                chips = card.ability.extra.chips
+            }
+        end
+        
     end
 }
 

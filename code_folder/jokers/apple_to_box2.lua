@@ -262,7 +262,7 @@ SMODS.Joker {
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = false,
-    config = { extra = { chips = 0, ghost_odds = 4 } },
+    config = { extra = { chips = 0 , ghost_odds = 4 } },
 
     -- Update Variables
     loc_vars = function(self, info_queue, card)

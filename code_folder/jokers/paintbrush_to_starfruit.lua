@@ -21,7 +21,7 @@ SMODS.Joker {
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
-    config = { extra = { increment = 0.25, scale = 10 } },
+    config = { extra = { increment = 0.25 , scale = 10 } },
 
     -- Vars
     loc_vars = function(self, info_queue, card)
@@ -72,7 +72,7 @@ SMODS.Joker {
     blueprint_compat = false,
     eternal_compat = false,
     perishable_compat = true,
-    config = { extra = { dollars = 2, increment = 1, limit = 6 } },
+    config = { extra = { dollars = 2 , increment = 1 , limit = 6 } },
 
     -- Update Variables
     loc_vars = function(self, info_queue, card)

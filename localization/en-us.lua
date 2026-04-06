@@ -217,6 +217,18 @@ return {
                 },
             },
 
+            -- TEA KETTLE
+            j_inin_tea_kettle = {
+                name = 'Tea Kettle',
+                text = {
+                    "{C:chips}+#1#{} Chips per hand played",
+                    "with an {C:attention}even{} number of cards",
+                    "{C:chips}-#1#{} Chips per hand played",
+                    "with an {C:attention}odd{} number of cards",
+                    "{C:inactive}(Currently {C:chips}+#2#{}{C:inactive} Chips){}"
+                },
+            },
+
             -- TEST TUBE
             j_inin_test_tube = {
                 name = 'Test Tube',
