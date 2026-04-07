@@ -23,8 +23,8 @@ SMODS.Suit {
 SMODS.Rank {
     key = 'Cardboard_Rank',
     card_key = "B",
-    pos = { x = 14 },
-    nominal = 15,
+    pos = { x = -1 },
+    nominal = 1,
     shorthand = "B",
     strength_effect = { ignore = true },
 

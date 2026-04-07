@@ -63,13 +63,13 @@ function Card:set_ability(initial, delay_sprites)
 
     -- Swap to proper suit
     if self.ability and self.ability.inin_pre_suit and initial.key ~= "m_inin_painted" then
-        SMODS.change_base(self, self.ability.inin_pre_suit)
+        assert(SMODS.change_base(self, self.ability.inin_pre_suit))
         self.ability.inin_pre_suit = nil
     end
 
     -- Swap to proper rank
     if self.ability and self.ability.inin_pre_rank and initial.key ~= "m_inin_cardboard" then
-        SMODS.change_base(self, self.ability.inin_pre_rank)
+        assert(SMODS.change_base(self, nil, self.ability.inin_pre_rank))
         self.ability.inin_pre_rank = nil
     end
 

@@ -26,7 +26,7 @@ SMODS.Enhancement {
             
             -- Set to Painted suit
             local new_suit = 'inin_Painted_Suit'
-            SMODS.change_base(card, new_suit)
+            assert(SMODS.change_base(card, new_suit))
         end
     end,
 }
@@ -64,11 +64,11 @@ SMODS.Enhancement {
     update = function(self, card, dt)
         if G.hand or G.play and SMODS.has_enhancement(card, 'm_inin_cardboard') then
             -- Set pre_rank
-            if not card.ability.inin_pre_rank then card.ability.inin_pre_rank = card.base.rank end
-            
+            if not card.ability.inin_pre_rank then card.ability.inin_pre_rank = card.base.value end
+
             -- Set to Cardboard Rank
             local new_rank = 'inin_Cardboard_Rank'
-            SMODS.change_base(card, new_rank)
+            assert(SMODS.change_base(card, nil, new_rank))
         end
     end,
 }
