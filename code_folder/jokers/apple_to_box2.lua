@@ -2,18 +2,10 @@
 -------------
 --BLUEBERRY--
 
-SMODS.Atlas {
-    key = 'blueberry',
-    path = 'j_blueberry.png',
-    px = 71,
-    py = 95
-}
-
-SMODS.Joker {
+InanimateInsanity.inin_Joker {
 	
     -- General Info
     key = 'blueberry',
-    atlas = 'blueberry',
 	unlocked = true,
     discovered = true,
     rarity = 2,
@@ -95,18 +87,10 @@ SMODS.Joker {
 --------
 --BOMB--
 
-SMODS.Atlas {
-    key = 'bomb',
-    path = 'j_bomb.png',
-    px = 71,
-    py = 95
-}
-
-SMODS.Joker {
+InanimateInsanity.inin_Joker {
 	
     -- General Info
     key = 'bomb',
-    atlas = 'bomb',
 	unlocked = true,
     discovered = true,
     rarity = 2,

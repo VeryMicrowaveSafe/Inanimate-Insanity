@@ -1,3 +1,80 @@
+---SETUP G.GAME---
+------------------
+---SETUP G.GAME---
+
+local game_start_run_ref = Game.start_run
+
+function Game:start_run(args)
+
+    -- Default function
+    local ret = game_start_run_ref(self, args)
+
+    -- Check that it is a new run and not a continued one
+    if not args.savetext then
+
+        -- Setup G.GAME.EliminatedJokers
+        G.GAME.EliminatedJokers = {}
+
+    end
+
+    -- End
+    return ret
+end
+
+
+
+
+
+
+
+
+
+---IN POOL---
+-------------
+---IN POOL---
+
+local check_eliminated = function(card_key)
+    for _, elim_key in pairs(G.GAME.EliminatedJokers) do
+        if card_key == elim_key then
+            print("this is an eliminated joker!" .. card_key)
+            return true
+        end
+    end
+    return false
+end
+
+local card_in_pool_ref = get_current_pool
+
+function get_current_pool(type, rarity, legendary, append)
+
+    -- Default function
+    local ret, ret2, ret3 = card_in_pool_ref(type, rarity, legendary, append)
+
+    print(type)
+
+    -- Check that it is a Joker
+    if type == "Joker" then
+        for i, card_key in ipairs(ret) do
+            check_eliminated(card_key)
+            if check_eliminated(card_key) then
+                print("eliminated")
+                ret[i] = "UNAVAILABLE"
+            end
+        end
+    end
+
+    -- End
+    return ret, ret2, ret3
+end
+
+
+
+
+
+
+
+
+
 ---JOKER QUIPS---
 -----------------
 ---JOKER QUIPS---
