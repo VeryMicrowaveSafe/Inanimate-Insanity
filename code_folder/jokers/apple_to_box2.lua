@@ -6,8 +6,6 @@ InanimateInsanity.inin_Joker {
 	
     -- General Info
     key = 'blueberry',
-	unlocked = true,
-    discovered = true,
     rarity = 2,
     cost = 5,
     blueprint_compat = false,

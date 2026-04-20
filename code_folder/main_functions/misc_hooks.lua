@@ -15,6 +15,16 @@ function Game:start_run(args)
         -- Setup G.GAME.EliminatedJokers
         G.GAME.EliminatedJokers = {}
 
+        -- Setup G.GAME.ImmuneJokers
+        G.GAME.ImmuneJokers = {
+            "j_joker",
+            "j_caino",
+            "j_triboulet",
+            "j_yorick",
+            "j_chicot",
+            "j_perkeo"
+        }
+
     end
 
     -- End
@@ -49,8 +59,6 @@ function get_current_pool(type, rarity, legendary, append)
 
     -- Default function
     local ret, ret2, ret3 = card_in_pool_ref(type, rarity, legendary, append)
-
-    print(type)
 
     -- Check that it is a Joker
     if type == "Joker" then
