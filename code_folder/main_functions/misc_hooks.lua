@@ -63,9 +63,7 @@ function get_current_pool(type, rarity, legendary, append)
     -- Check that it is a Joker
     if type == "Joker" then
         for i, card_key in ipairs(ret) do
-            check_eliminated(card_key)
             if check_eliminated(card_key) then
-                print("eliminated")
                 ret[i] = "UNAVAILABLE"
             end
         end
