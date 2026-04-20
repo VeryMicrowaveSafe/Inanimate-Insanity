@@ -217,11 +217,14 @@ InanimateInsanity.inin_ElimChallenge = SMODS.Consumable:extend{
                                         pos_exclude[i] = i2
                                         tie = false
 
-                                    elseif max_votes[i] == vote and check_table(vote, tie_vars) then
+                                    elseif max_votes[i] == vote and check_table(vote_info[2][i2], tie_vars) then
 
                                         -- There is a tie, reset tie_vars if it's a new tie, and add the new key to tie_vars
                                         tie = true
-                                        if vote ~= cur_tie then tie_vars = { max_votes_keys[i] } end
+                                        if vote ~= cur_tie then
+                                            tie_vars = {}
+                                            tie_vars[1] = max_votes_keys[i]
+                                        end
                                         tie_vars[#tie_vars+1] = vote_info[2][i2]
                                         cur_tie = vote
 
@@ -229,6 +232,18 @@ InanimateInsanity.inin_ElimChallenge = SMODS.Consumable:extend{
 
                                 end
 
+                            end
+                        end
+
+                        -- Cycle through max_votes_keys BACKWARDS to ensure that all tied Jokers are within tie_vars
+                        local absolute_tie = max_votes[#max_votes]
+                        for i = #max_votes_keys, 1, -1 do
+                            if absolute_tie ~= max_votes[i] then
+                                break
+                            else
+                                if check_table(max_votes_keys[i], tie_vars) then
+                                    tie_vars[#tie_vars+1] = max_votes_keys[i]
+                                end
                             end
                         end
 
@@ -266,7 +281,7 @@ InanimateInsanity.inin_ElimChallenge = SMODS.Consumable:extend{
                             
                             -- Exclude Jokers included in tie from voting if not every Joker tied
                             if #tie_vars < #ret_voters then
-                                vote_exclusions = tie_vars
+                                vote_exclusions = SMODS.shallow_copy(tie_vars)
                                 tie_immunity = {}
                                 for _, immunity_obj in pairs(pool) do
                                     if check_table(immunity_obj, vote_exclusions) then
