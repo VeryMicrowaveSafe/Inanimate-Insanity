@@ -46,8 +46,6 @@ InanimateInsanity.inin_ElimChallenge = SMODS.Consumable:extend{
 
         if card.ability.extra.randchoice then
 
-            -- Set up display values
-            local general_votes = {}
             
             -- Set up return values
             local ret_votes = {}
@@ -116,7 +114,7 @@ InanimateInsanity.inin_ElimChallenge = SMODS.Consumable:extend{
                         immune[#immune+1] = joker_vote
 
                         -- In a tie, only certain Jokers can be voted for. All others are immune
-                        if tie_immunes ~= {} then
+                        if #tie_immunes > 0 then
                             for _, extra_immune in pairs(tie_immunes) do
                                 immune[#immune+1] = extra_immune
                             end
@@ -235,24 +233,24 @@ InanimateInsanity.inin_ElimChallenge = SMODS.Consumable:extend{
                             end
                         end
 
-                        -- Cycle through max_votes_keys BACKWARDS to ensure that all tied Jokers are within tie_vars
-                        local absolute_tie = max_votes[#max_votes]
-                        for i = #max_votes_keys, 1, -1 do
-                            if absolute_tie ~= max_votes[i] then
-                                break
-                            else
-                                if check_table(max_votes_keys[i], tie_vars) then
-                                    tie_vars[#tie_vars+1] = max_votes_keys[i]
-                                end
-                            end
-                        end
-
                         -- Tie check
                         if tie and tie_count < 3 then
 
                             print("There has been a tie! Time for a revote!")
                             print(tie_vars)
                             print(vote_info[1])
+
+                            -- Cycle through max_votes_keys BACKWARDS to ensure that all tied Jokers are within tie_vars
+                            local absolute_tie = max_votes[#max_votes]
+                            for i = #max_votes_keys, 1, -1 do
+                                if absolute_tie ~= max_votes[i] then
+                                    break
+                                else
+                                    if check_table(max_votes_keys[i], tie_vars) then
+                                        tie_vars[#tie_vars+1] = max_votes_keys[i]
+                                    end
+                                end
+                            end
 
                             -- Check if tie was only in the lower portion of the eliminations
                             for i = tie_start, #max_votes do
@@ -347,7 +345,7 @@ InanimateInsanity.inin_ElimChallenge = SMODS.Consumable:extend{
 InanimateInsanity.inin_ElimChallenge {
     key = 'ufo_rescue',
     pos = { x = 0, y = 0 },
-    config = { extra = { eliminations = 5, randchoice = true, qualifier = false, qualifier_c = false, qualifier_a = "mult" } },
+    config = { extra = { eliminations = 2, randchoice = true, qualifier = false, qualifier_c = false, qualifier_a = "mult" } },
     
     -- When used
     use = function(self, card, area, copier)
@@ -357,7 +355,10 @@ InanimateInsanity.inin_ElimChallenge {
         local eligible_card = pseudorandom_element(editionless_jokers, 'UFO')
         eligible_card:set_edition('e_inin_shimmer')
 
-        local pool = SMODS.get_attribute_pool(card.ability.extra.qualifier_a)
+        local pool = {}
+        for _, add_pool in pairs(G.P_CENTER_POOLS.Joker) do
+            pool[#pool+1] = add_pool.key
+        end
 
         -- Eliminate cards
         card.config.center.eliminate(self, card, area, copier, pool)

@@ -2,25 +2,17 @@
 --------
 --TACO--
 
-SMODS.Atlas {
-    key = 'taco',
-    path = 'j_taco.png',
-    px = 71,
-    py = 95
-}
-
-SMODS.Joker {
+InanimateInsanity.inin_Joker {
 	
     -- General Info
     key = 'taco',
-    atlas = 'taco',
-	unlocked = true,
-    discovered = true,
+    pos = { x = 6, y = 0 },
     rarity = 3,
     cost = 6,
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
+    attributes = { "xmult", "chips", "chance" },
     config = { extra = { Xmult = 5 , chips = 50 , odds = 2 } },
 
     -- Vars
@@ -60,25 +52,17 @@ SMODS.Joker {
 --------------
 --TEA KETTLE--
 
-SMODS.Atlas {
-    key = 'tea_kettle',
-    path = 'j_tea_kettle.png',
-    px = 71,
-    py = 95
-}
-
-SMODS.Joker {
+InanimateInsanity.inin_Joker {
 	
     -- General Info
     key = 'tea_kettle',
-    atlas = 'tea_kettle',
-	unlocked = true,
-    discovered = true,
+    pos = { x = 0, y = 0 },
     rarity = 1,
     cost = 4,
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = false,
+    attributes = { "chips", "scaling" },
     config = { extra = { increment = 6 , chips = 0 } },
 
     -- Return for localization
@@ -129,25 +113,17 @@ SMODS.Joker {
 -------------
 --TEST TUBE--
 
-SMODS.Atlas {
-    key = 'test_tube',
-    path = 'j_test_tube.png',
-    px = 71,
-    py = 95
-}
-
-SMODS.Joker {
+InanimateInsanity.inin_Joker {
 	
     -- General Info
     key = 'test_tube',
-    atlas = 'test_tube',
-	unlocked = true,
-    discovered = true,
+    pos = { x = 7, y = 0 },
     rarity = 2,
     cost = 4,
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = false,
+    attributes = { "mult", "scaling" },
     config = { extra = { increment = 2 , mult = 0 , size = 1 } },
 
     -- Return for localization

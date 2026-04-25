@@ -4,7 +4,7 @@
 
 SMODS.Atlas {
     key = 'inin_jokers',
-    path = 'j_blueberry.png',
+    path = 'j_joker_sheet.png',
     px = 71,
     py = 95
 }

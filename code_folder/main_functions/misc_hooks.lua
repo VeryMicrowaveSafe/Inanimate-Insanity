@@ -18,6 +18,7 @@ function Game:start_run(args)
         -- Setup G.GAME.ImmuneJokers
         G.GAME.ImmuneJokers = {
             "j_joker",
+            "j_ring_master",
             "j_caino",
             "j_triboulet",
             "j_yorick",
@@ -46,7 +47,6 @@ end
 local check_eliminated = function(card_key)
     for _, elim_key in pairs(G.GAME.EliminatedJokers) do
         if card_key == elim_key then
-            print("this is an eliminated joker!" .. card_key)
             return true
         end
     end

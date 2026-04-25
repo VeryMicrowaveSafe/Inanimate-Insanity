@@ -8,9 +8,11 @@ InanimateInsanity.inin_Joker {
     key = 'blueberry',
     rarity = 2,
     cost = 5,
+    pos = { x = 0, y = 0 },
     blueprint_compat = false,
     eternal_compat = true,
     perishable_compat = true,
+    attributes = { "hands", "boss_blind" },
     config = { extra = { hands = 2 , hands_remaining = 2 , boss = false } },
 
     -- Update Variables
@@ -91,11 +93,13 @@ InanimateInsanity.inin_Joker {
     key = 'bomb',
 	unlocked = true,
     discovered = true,
+    pos = { x = 1, y = 0 },
     rarity = 2,
     cost = 5,
     blueprint_compat = true,
     eternal_compat = false,
     perishable_compat = true,
+    attributes = { "retrigger", "hand_type", "food" },
 
     -- Calculations
     calculate = function(self, card, context)
@@ -146,25 +150,17 @@ InanimateInsanity.inin_Joker {
 -------------
 --BOOKCASEY--
 
-SMODS.Atlas {
-    key = 'bookcasey',
-    path = 'j_bookcasey.png',
-    px = 71,
-    py = 95
-}
-
-SMODS.Joker {
+InanimateInsanity.inin_Joker {
     
     -- General Info
     key = 'bookcasey',
-    atlas = 'bookcasey',
-    unlocked = true,
-    discovered = true,
+    pos = { x = 2, y = 0 },
     rarity = 1,
     cost = 3,
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
+    attributes = { "xmult", "food" },
     config = { extra = { Xmult = 10 , deletion_flag = false } },
 
     -- Update variables
@@ -225,25 +221,17 @@ SMODS.Joker {
 -------
 --BOW--
 
-SMODS.Atlas {
-    key = 'bow',
-    path = 'j_bow.png',
-    px = 71,
-    py = 95
-}
-
-SMODS.Joker {
+InanimateInsanity.inin_Joker {
 
     -- General Info
     key = 'bow',
-    atlas = 'bow',
-    unlocked = true,
-    discovered = true,
+    pos = { x = 0, y = 0 },
     rarity = 2,
     cost = 5,
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = false,
+    attributes = { "chips", "scaling", "reroll" },
     config = { extra = { chips = 0 , ghost_odds = 4 } },
 
     -- Update Variables
@@ -294,25 +282,17 @@ SMODS.Joker {
 ---------
 --BOX 1--
 
-SMODS.Atlas {
-    key = 'box',
-    path = 'j_box.png',
-    px = 71,
-    py = 95
-}
-
-SMODS.Joker {
+InanimateInsanity.inin_Joker {
 	
     -- General Info
     key = 'box',
-    atlas = 'box',
-	unlocked = true,
-    discovered = true,
+    pos = { x = 0, y = 0 },
     rarity = 1,
     cost = 4,
     blueprint_compat = false,
     eternal_compat = false,
     perishable_compat = true,
+    attributes = { "food" },
     config = { extra = { odds = 3 } },
 
     -- Update Variables

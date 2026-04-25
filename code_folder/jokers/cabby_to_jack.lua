@@ -2,25 +2,17 @@
 ---------
 --CABBY--
 
-SMODS.Atlas {
-    key = 'cabby',
-    path = 'j_cabby.png',
-    px = 71,
-    py = 95
-}
-
-SMODS.Joker {
+InanimateInsanity.inin_Joker {
 	
     -- General Info
     key = 'cabby',
-    atlas = 'cabby',
-	unlocked = true,
-    discovered = true,
+    pos = { x = 3, y = 0 },
     rarity = 3,
     cost = 10,
     blueprint_compat = false,
     eternal_compat = true,
     perishable_compat = true,
+    attributes = { "copying" },
     config = { extra = { resetting = false } },
 
 
@@ -208,25 +200,17 @@ SMODS.Joker {
 -------
 --GOO--
 
-SMODS.Atlas {
-    key = 'goo',
-    path = 'j_goo.png',
-    px = 71,
-    py = 95
-}
-
-SMODS.Joker {
+InanimateInsanity.inin_Joker {
 	
     -- General Info
     key = 'goo',
-    atlas = 'goo',
-	unlocked = true,
-    discovered = true,
+    pos = { x = 0, y = 0 },
     rarity = 1,
     cost = 4,
     blueprint_compat = false,
     eternal_compat = true,
     perishable_compat = true,
+    attributes = { "economy" },
     config = { extra = { dollars = 2 , multiplier = 1 , max = 14 } },
 
     -- Update Localization
@@ -263,25 +247,17 @@ SMODS.Joker {
 --------
 --JACK--
 
-SMODS.Atlas {
-    key = 'jack',
-    path = 'j_jack.png',
-    px = 71,
-    py = 95
-}
-
-SMODS.Joker {
+InanimateInsanity.inin_Joker {
 	
     -- General Info
     key = 'jack',
-    atlas = 'jack',
-	unlocked = true,
-    discovered = true,
+    pos = { x = 0, y = 0 },
     rarity = 1,
     cost = 5,
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = false,
+    attributes = { "mult", "scaling", "reset", "jack" },
     config = { extra = { mult = 0, increment = 3 } },
 
     -- Update Localization

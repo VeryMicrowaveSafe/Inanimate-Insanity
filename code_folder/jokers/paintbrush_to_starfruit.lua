@@ -1,26 +1,18 @@
---TACO--
---------
---TACO--
+--SILVER SPOON--
+----------------
+--SILVER SPOON--
 
-SMODS.Atlas {
-    key = 'silver_spoon',
-    path = 'j_silver_spoon.png',
-    px = 71,
-    py = 95
-}
-
-SMODS.Joker {
+InanimateInsanity.inin_Joker {
 	
     -- General Info
     key = 'silver_spoon',
-    atlas = 'silver_spoon',
-	unlocked = true,
-    discovered = true,
+    pos = { x = 0, y = 0 },
     rarity = 3,
     cost = 8,
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
+    attributes = { "xmult" },
     config = { extra = { increment = 0.25 , scale = 10 } },
 
     -- Vars
@@ -53,25 +45,17 @@ SMODS.Joker {
 -------------
 --STARFRUIT--
 
-SMODS.Atlas {
-    key = 'starfruit',
-    path = 'j_starfruit.png',
-    px = 71,
-    py = 95
-}
-
-SMODS.Joker {
+InanimateInsanity.inin_Joker {
 	
     -- General Info
     key = 'starfruit',
-    atlas = 'starfruit',
-	unlocked = true,
-    discovered = true,
+    pos = { x = 5, y = 0 },
     rarity = 1,
     cost = 5,
     blueprint_compat = false,
     eternal_compat = false,
     perishable_compat = true,
+    attributes = { "economy", "food" },
     config = { extra = { dollars = 2 , increment = 1 , limit = 6 } },
 
     -- Update Variables

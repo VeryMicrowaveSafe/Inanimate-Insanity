@@ -2,25 +2,17 @@
 ----------
 --MAGNET--
 
-SMODS.Atlas {
-    key = 'magnet',
-    path = 'j_magnet.png',
-    px = 71,
-    py = 95
-}
-
-SMODS.Joker {
+InanimateInsanity.inin_Joker {
 
     -- General Info
     key = 'magnet',
-    atlas = 'magnet',
-    unlocked = true,
-    discovered = true,
+    pos = { x = 0, y = 0 },
     rarity = 1,
     cost = 5,
     blueprint_compat = true,
     eternal_compat = true,
     perishable_compat = true,
+    attributes = { "xmult", "enhancements" },
     config = { extra = { Xmult = 1.75 } },
 
     -- Update Description
@@ -55,25 +47,17 @@ SMODS.Joker {
 ------
 --OJ--
 
-SMODS.Atlas {
-    key = 'oj',
-    path = 'j_oj.png',
-    px = 71,
-    py = 95
-}
-
-SMODS.Joker {
+InanimateInsanity.inin_Joker {
 	
     -- General Info
     key = 'oj',
-    atlas = 'oj',
-	unlocked = true,
-    discovered = true,
+    pos = { x = 4, y = 0 },
     rarity = 3,
     cost = 8,
     blueprint_compat = false,
     eternal_compat = true,
     perishable_compat = true,
+    attributes = { "balance" },
 
     -- Calculations
     calculate = function(self, card, context)
