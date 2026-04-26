@@ -23,7 +23,8 @@ function Game:start_run(args)
             "j_triboulet",
             "j_yorick",
             "j_chicot",
-            "j_perkeo"
+            "j_perkeo",
+            "j_inin_mephone"
         }
 
     end

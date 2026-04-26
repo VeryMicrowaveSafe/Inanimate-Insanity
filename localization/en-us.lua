@@ -320,11 +320,54 @@ return {
                     },
                     {
                         "{C:red,E:2}Eliminates{} #1# #3#",
-                        "#4#{C:attention}Joker#2#{}"
+                        "{C:attention}Joker#2#{}"
                     },
                 },
             }
         },
+        
+        
+
+
+
+
+
+
+        
+        --TOOLTIPS--
+        --TOOLTIPS--
+        --TOOLTIPS--
+
+        Other = {
+
+            inin_elim_info = {
+                name = "Elimination",
+                text = {
+                    "{C:red}Eliminated{} Jokers",
+                    "may no longer",
+                    "appear in the run"
+                }
+            },
+
+            inin_rejoin_info = {
+                name = "Rejoin",
+                text = {
+                    "{C:blue}Rejoining{} Jokers",
+                    "are no longer",
+                    "{C:red}Eliminated{}"
+                }
+            },
+
+            inin_immune_info = {
+                name = "Immunity",
+                text = {
+                    "{C:legendary}Immune{} Jokers",
+                    "cannot be",
+                    "{C:red}Eliminated{}"
+                }
+            }
+
+        }
     },
 
 

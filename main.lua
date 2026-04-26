@@ -15,6 +15,7 @@ assert(SMODS.load_file('code_folder/main_functions/misc_hooks.lua'))()
 assert(SMODS.load_file('code_folder/main_functions/pools.lua'))()
 assert(SMODS.load_file('code_folder/main_functions/config_tab.lua'))()
 assert(SMODS.load_file('code_Folder/main_functions/extend_setup.lua'))()
+assert(SMODS.load_file('code_Folder/main_functions/challenge_card_setup.lua'))()
 
 -- Assert Joker scripts
 local jokers_src = SMODS.NFS.getDirectoryItems(SMODS.current_mod.path .. 'code_folder/jokers')
