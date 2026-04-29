@@ -1,7 +1,51 @@
 return {
     descriptions = {
+
+
+
+        
+
+
+
+        --DECKS--
+        --DECKS--
+        --DECKS--
+
+        Back = {
+        },
         
         
+
+
+
+
+
+
+        
+        --BLINDS--
+        --BLINDS--
+        --BLINDS--
+
+        Blind = {
+
+            -- THE PIE
+            bl_inin_pie = {
+                name = "The Pie",
+                text = {
+                    "Must play between",
+                    "2-4 cards",
+                },
+            },
+
+        },
+        
+        
+
+
+
+
+
+
         
         --EDITIONS--
         --EDITIONS--

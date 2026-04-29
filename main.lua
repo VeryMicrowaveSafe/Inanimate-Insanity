@@ -24,9 +24,10 @@ for _, file in ipairs (jokers_src) do
     assert(SMODS.load_file('code_folder/jokers/' .. file))()
 end
 
--- Assert other scripts
+-- Assert additions
 assert(SMODS.load_file('code_folder/additions/challenge_cards.lua'))()
 assert(SMODS.load_file('code_folder/additions/editions.lua'))()
 assert(SMODS.load_file('code_folder/additions/enhancements.lua'))()
 assert(SMODS.load_file('code_folder/additions/suitrank.lua'))()
+assert(SMODS.load_file('code_folder/additions/blinds.lua'))()
 assert(SMODS.load_file('code_folder/additions/sounds.lua'))()
