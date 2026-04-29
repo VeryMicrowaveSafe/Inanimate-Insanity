@@ -41,6 +41,62 @@ end
 
 
 
+---GAME UPDATE---
+-----------------
+---GAME UPDATE---
+
+function Game:update_inin_elim(dt)
+    if self.buttons then self.buttons:remove(); self.buttons = nil end
+    if self.shop then G.shop.alignment.offset.y = G.ROOM.T.y+11 end
+    if self.blind_select then G.blind_select.alignment.offset.y = G.ROOM.T.y + 39 end
+
+    if not G.STATE_COMPLETE then
+        G.STATE_COMPLETE = true
+        G.CONTROLLER.interrupt.focus = true
+        G.E_MANAGER:add_event(Event({
+            trigger = 'immediate',
+            func = function()
+                G.booster_pack_sparkles = Particles(1, 1, 0,0, {
+                    timer = 0.015,
+                    scale = 0.3,
+                    initialize = true,
+                    lifespan = 3,
+                    speed = 0.2,
+                    padding = -1,
+                    attach = G.ROOM_ATTACH,
+                    colours = {G.C.BLACK, G.C.RED},
+                    fill = true
+                })
+                G.booster_pack_sparkles.fade_alpha = 1
+                G.booster_pack_sparkles:fade(1, 0)
+                ease_background_colour_blind(G.STATES.STANDARD_PACK)
+                G.E_MANAGER:add_event(Event({
+                    trigger = 'immediate',
+                    func = function()
+                        G.E_MANAGER:add_event(Event({
+                            trigger = 'after',
+                            delay = 0.5,
+                            func = function()
+                                G.CONTROLLER:recall_cardarea_focus('pack_cards')
+                                return true
+                            end}))
+                        return true
+                    end
+                }))
+                return true
+            end
+        }))  
+    end
+end
+
+
+
+
+
+
+
+
+
 ---IN POOL---
 -------------
 ---IN POOL---

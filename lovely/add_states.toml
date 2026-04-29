@@ -1,0 +1,16 @@
+[manifest]
+version = "1.0.0"
+priority = 0
+
+
+[[patches]]
+[patches.pattern]
+target = "game.lua"
+pattern = "        if self.STATE == self.STATES.MENU then"
+position = "before"
+payload = '''
+if self.STATE == self.STATES.ININ_ELIMCUTSCENE then
+    self:update_inin_elim(dt)
+end
+'''
+match_indent = true

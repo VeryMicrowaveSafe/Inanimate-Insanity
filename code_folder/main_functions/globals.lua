@@ -6,3 +6,5 @@ G.C.ININ = {
         Challenge = HEX("C75858")
     }
 }
+
+G.STATES.ININ_ELIMCUTSCENE = 99605

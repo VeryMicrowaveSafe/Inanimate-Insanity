@@ -344,7 +344,7 @@ return {
                 name = "Elimination",
                 text = {
                     "{C:red}Eliminated{} Jokers",
-                    "may no longer",
+                    "will no longer",
                     "appear in the run"
                 }
             },
